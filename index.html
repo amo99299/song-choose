@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;div id="app" style="max-width:760px;margin:auto;text-align:center;font-family:system-ui"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;h2 id="roundTitle"&gt;&lt;/h2&gt;</p>
+<p class="p1">&lt;div id="progress" style="margin-bottom:10px"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div style="margin:25px 0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="choose(0)" style="width:40%"&gt;較喜歡 A&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="choose(1)" style="width:20%"&gt;無法抉擇&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;button onclick="choose(2)" style="width:40%"&gt;較喜歡 B&lt;/button&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div style="display:flex;justify-content:space-between;font-size:18px"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="left" style="width:45%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="right" style="width:45%"&gt;&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">let songs = [</p>
+<p class="p1">{ title:"Bunny Girl", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=695s" },</p>
+<p class="p1">{ title:"ベテルギウス", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=1154s" },</p>
+<p class="p1">{ title:"白日", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=1805s" },</p>
+<p class="p1">{ title:"擱淺", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=2603s" },</p>
+<p class="p1">{ title:"楓", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=2912s" },</p>
+<p class="p1">{ title:"刀ピークリスマス2023", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=3437s" },</p>
+<p class="p1">{ title:"刀ピークリスマス2024", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=3699s" },</p>
+<p class="p1">{ title:"unravel", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=4126s" },</p>
+<p class="p1">{ title:"悪魔の子", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=4633s" },</p>
+<p class="p1">{ title:"完全感覺Dreamer", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=4991s" },</p>
+<p class="p1">{ title:"怪獣の花唄", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=5597s" },</p>
+<p class="p1">{ title:"左手指月", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=6185s" },</p>
+<p class="p1">{ title:"フォニイ", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=7250s" },</p>
+<p class="p1">{ title:"深昏睡", url:"https://www.youtube.com/live/PWI7heeyZ8U?t=7616s" },</p>
+<p class="p1">{ title:"戀愛サーキュレーション", url:"https://www.youtube.com/live/wv78ruYo3eQ?t=226s" },</p>
+<p class="p1">{ title:"告白氣球", url:"https://www.youtube.com/live/wv78ruYo3eQ?t=645s" },</p>
+<p class="p1">{ title:"惑星ループ", url:"https://www.youtube.com/live/wv78ruYo3eQ?t=1022s" },</p>
+<p class="p1">{ title:"買你", url:"https://www.youtube.com/live/wv78ruYo3eQ?t=1409s" },</p>
+<p class="p1">{ title:"可愛くてごめん", url:"https://www.youtube.com/live/wv78ruYo3eQ?t=1743s" },</p>
+<p class="p1">{ title:"小星星", url:"https://www.youtube.com/live/FETksLCKIlk?t=1234s" },</p>
+<p class="p1">{ title:"刑者", url:"https://www.youtube.com/live/FETksLCKIlk?t=1456s" },</p>
+<p class="p1">{ title:"独りんぼエンヴィー", url:"https://www.youtube.com/live/FETksLCKIlk?t=2210s" },</p>
+<p class="p1">{ title:"虎視眈々", url:"https://www.youtube.com/live/FETksLCKIlk?t=2743s" },</p>
+<p class="p1">{ title:"天ノ弱", url:"https://www.youtube.com/live/DutYpYBuNjg?t=2025s" },</p>
+<p class="p1">{ title:"水星記", url:"https://www.youtube.com/live/DutYpYBuNjg?t=2538s" },</p>
+<p class="p1">{ title:"ようこそジャパリパークへ", url:"https://www.youtube.com/live/DutYpYBuNjg?t=3723s" },</p>
+<p class="p1">{ title:"SPICE!", url:"https://www.youtube.com/live/DutYpYBuNjg?t=4140s" },</p>
+<p class="p1">{ title:"金包銀", url:"https://www.youtube.com/live/DutYpYBuNjg?t=4822s" },</p>
+<p class="p1">{ title:"花に亡霊", url:"https://www.youtube.com/live/DutYpYBuNjg?t=5460s" },</p>
+<p class="p1">{ title:"酔いどれ知らず", url:"https://www.youtube.com/live/DutYpYBuNjg?t=5924s" },</p>
+<p class="p1">{ title:"Bubbles", url:"https://www.youtube.com/live/DutYpYBuNjg?t=6404s" },</p>
+<p class="p1">{ title:"Why You Gonna Lie", url:"https://www.youtube.com/live/DutYpYBuNjg?t=6838s" },</p>
+<p class="p1">{ title:"官方回答", url:"https://www.youtube.com/live/DutYpYBuNjg?t=7186s" },</p>
+<p class="p1">{ title:"猿芝居", url:"https://www.youtube.com/live/DutYpYBuNjg?t=7674s" },</p>
+<p class="p1">{ title:"かくれんぼ", url:"https://www.youtube.com/live/qr9fACyqugc?t=1228s" },</p>
+<p class="p1">{ title:"流光記", url:"https://www.youtube.com/live/qr9fACyqugc?t=1950s" },</p>
+<p class="p1">{ title:"Lemon", url:"https://www.youtube.com/live/qr9fACyqugc?t=2822s" },</p>
+<p class="p1">{ title:"Flamingo", url:"https://www.youtube.com/live/qr9fACyqugc?t=3326s" },</p>
+<p class="p1">{ title:"迷醉", url:"https://www.youtube.com/live/qr9fACyqugc?t=4325s" },</p>
+<p class="p1">{ title:"永不失聯的愛", url:"https://www.youtube.com/live/qr9fACyqugc?t=4979s" },</p>
+<p class="p1">{ title:"青のすみか", url:"https://www.youtube.com/live/qr9fACyqugc?t=5763s" },</p>
+<p class="p1">{ title:"海市蜃樓", url:"https://www.youtube.com/live/qr9fACyqugc?t=6379s" },</p>
+<p class="p1">{ title:"晚餐歌", url:"https://www.youtube.com/live/qr9fACyqugc?t=7098s" },</p>
+<p class="p1">{ title:"少女レイ", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=639s" },</p>
+<p class="p1">{ title:"夜曲", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=1195s" },</p>
+<p class="p1">{ title:"ダーリン", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=1909s" },</p>
+<p class="p1">{ title:"口是心非", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=2534s" },</p>
+<p class="p1">{ title:"踏山河", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=3149s" },</p>
+<p class="p1">{ title:"跳樓機", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=3549s" },</p>
+<p class="p1">{ title:"ヴィラン", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=4893s" },</p>
+<p class="p1">{ title:"迷迭香", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=5193s" },</p>
+<p class="p1">{ title:"願溫柔的你被世界溫柔以待", url:"https://www.youtube.com/live/qOYn1OHKnyo?t=6342s" }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>/* 若還有更多，直接接著貼 */</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">let round = 1;</p>
+<p class="p1">let current = shuffle([...songs]);</p>
+<p class="p1">let nextRound = [];</p>
+<p class="p1">let index = 0;</p>
+<p class="p2"><br></p>
+<p class="p1">function shuffle(arr){ return arr.sort(()=&gt;Math.random()-0.5); }</p>
+<p class="p2"><br></p>
+<p class="p1">function startRound(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("roundTitle").innerText = `第 ${round} 輪（剩餘 ${current.length} 首）`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>nextRound = [];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>index = 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>show();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function show(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(index &gt;= current.length-1){ finishRound(); return; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("left").innerText = current[index].title;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("right").innerText = current[index+1].title;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById("progress").innerText =</p>
+<p class="p1"><span class="Apple-converted-space">    </span>`比較：${index/2+1} / ${Math.ceil(current.length/2)}`;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function choose(c){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let a = current[index];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let b = current[index+1];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(c===0) nextRound.push(a);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else if(c===2) nextRound.push(b);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>else { nextRound.push(a,b); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>index += 2;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>show();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function finishRound(){</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(current.length % 2 === 1) nextRound.push(current[current.length-1]);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if(nextRound.length === 1){</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("app").innerHTML =</p>
+<p class="p1"><span class="Apple-converted-space">      </span>`&lt;h2&gt;🏆 你最喜歡的歌曲&lt;/h2&gt;&lt;p&gt;&lt;a href="${nextRound[0].url}" target="_blank"&gt;${nextRound[0].title}&lt;/a&gt;&lt;/p&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>current = shuffle(nextRound);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>round++;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>startRound();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">startRound();</p>
+<p class="p1">&lt;/script&gt;</p>
+</body>
+</html>
